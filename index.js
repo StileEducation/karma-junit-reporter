@@ -62,11 +62,11 @@ var JUnitReporter = function(baseReporterDecorator, config, logger, helper, form
     if (result.disconnected) {
       // Karma reported that the test was aborted because the test was disconnected
       // Write out an error element so that JUnit XML consumers can be aware of this
-      suit.ele('error', 'Test runner disconnected during the test; not all tests were run.');
+      suite.ele('error', 'Test runner disconnected during the test; not all tests were run.');
     }
 
     if (result.error) {
-      suit.ele('error', 'The test runner reported an error; check the output log for more detail.');
+      suite.ele('error', 'The test runner reported an error; check the output log for more detail.');
     }
 
     suite.ele('system-out').dat(allMessages.join() + '\n');
